@@ -165,6 +165,6 @@ Simülasyon dalga formları `docs/` klasöründe yer almaktadır.
 2. `tb/` altındaki testbench’lerden birini çalıştırın
 3. Assertion mesajları ve dalga formlarını inceleyin
 
-## Author
+## Author - Yazar
 Hasan Burak Çiftçi  
 Electrical & Electronics Engineer 
