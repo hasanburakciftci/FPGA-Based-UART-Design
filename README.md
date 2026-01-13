@@ -1,16 +1,19 @@
 # FPGA-Based UART Design (VHDL)
 
-This repository contains a fully synthesizable UART (Universal Asynchronous
-Receiver/Transmitter) implementation written in VHDL. The design includes
-independent transmitter (TX) and receiver (RX) modules, along with a top-level
-integration module supporting internal loopback for verification.
+This repository presents a fully synthesizable, FSM-based UART (Universal Asynchronous Receiver/Transmitter) core implemented in VHDL.  
+The design includes independent TX and RX modules, robust RX input synchronization, and a top-level integration supporting internal loopback.  
 
-The project is verified using self-checking testbenches and RTL simulation.
+The project is verified at RTL level using self-checking testbenches and simulation waveform analysis.
 
+## UART Loopback Waveform
+
+This waveform demonstrates successful internal TX → RX loopback verification at RTL level.
+
+- TX start bit, data bits (LSB first), and stop bit are correctly generated
+- RX performs mid-bit sampling after proper start-bit detection
+- rx_valid is asserted for one clock cycle upon successful frame reception
+  
 ![UART Loopback Waveform](docs/uart_top_wf.png)
-
-This waveform shows successful TX → RX internal loopback
-verification at RTL level.
 
 ## Project Structure
 ```
@@ -33,10 +36,10 @@ FPGA-Based-UART-Design/
 ```
 ## Design Overview
 
-- Standard UART frame format (8 data bits, no parity, 1 stop bit)
-- Configurable baud rate via generics
-- FSM-based TX and RX architectures
-- RX input synchronized using double flip-flop technique
+- Standard UART frame format: 1 start bit, 8 data bits, no parity, 1 stop bit
+- Configurable baud rate via VHDL generics
+- FSM-based architectures for both TX and RX modules
+- RX input synchronized using a double flip-flop technique
 - Active-low synchronous reset
 
 ## UART Transmitter (uart_tx)
@@ -88,13 +91,10 @@ Simulation waveforms are provided in the `docs/` directory.
 
  # FPGA Tabanlı UART Tasarımı (VHDL)
 
-Bu repo, VHDL kullanılarak geliştirilmiş tam sentezlenebilir bir
-UART (Universal Asynchronous Receiver/Transmitter) tasarımını içerir.
-Tasarım; bağımsız verici (TX), alıcı (RX) modülleri ve dahili loopback
-destekli üst seviye entegrasyon modülünden oluşur.
+Bu repo, VHDL ile geliştirilmiş, tam sentezlenebilir ve FSM tabanlı bir UART (Universal Asynchronous Receiver/Transmitter) çekirdeğini sunmaktadır.
+Tasarım; bağımsız TX ve RX modüllerini, sağlam RX giriş senkronizasyonunu ve dahili loopback destekli üst seviye entegrasyonu içermektedir.
 
-Proje, kendi kendini doğrulayan (self-checking) testbench’ler ile
-RTL seviyesinde test edilmiştir.
+Proje, RTL seviyesinde self-checking testbench’ler ve simülasyon dalga formu analizleri kullanılarak doğrulanmıştır.
 
 ## Proje Yapısı
 ```
@@ -117,7 +117,7 @@ FPGA-Based-UART-Design/
 ```
 ## Tasarım Özeti
 
-- Standart UART çerçevesi (8 veri biti, parity yok, 1 stop biti)
+- Standart UART çerçevesi: 1 başlangıç biti, 8 veri biti, parity yok, 1 stop biti
 - Generic parametreler ile ayarlanabilir baud hızı
 - TX ve RX için FSM tabanlı mimari
 - RX hattı için çift flip-flop senkronizasyonu
@@ -164,3 +164,7 @@ Simülasyon dalga formları `docs/` klasöründe yer almaktadır.
 1. Repoyu klonlayın
 2. `tb/` altındaki testbench’lerden birini çalıştırın
 3. Assertion mesajları ve dalga formlarını inceleyin
+
+## Author
+Hasan Burak Çiftçi  
+Electrical & Electronics Engineer 
