@@ -1,0 +1,16 @@
+# Vivado
+*.jou
+*.log
+*.str
+*.wcfg
+*.wdb
+.xpr
+.cache/
+.runs/
+.sim/
+.hw/
+.ip_user_files/
+
+# OS
+.DS_Store
+Thumbs.db
