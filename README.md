@@ -1,7 +1,3 @@
-## Languages [TR](#-türkçe) | [EN](#-english)
-
- ## 🇬🇧 English
- 
 # FPGA-Based UART Design (VHDL)
 
 This repository contains a fully synthesizable UART (Universal Asynchronous
@@ -13,21 +9,24 @@ The project is verified using self-checking testbenches and RTL simulation.
 
 ![UART Loopback Waveform](docs/uart_top_wf.png)
 
+This waveform shows successful TX → RX internal loopback
+verification at RTL level.
+
 ## Project Structure
 
 FPGA-Based-UART-Design/
 ├── rtl/
-│   ├── uart_tx.vhd      -- UART transmitter (FSM-based)
-│   ├── uart_rx.vhd      -- UART receiver with input synchronization
-│   └── uart_top.vhd     -- Top-level integration with optional loopback
+│ ├── uart_tx.vhd -- UART transmitter (FSM-based)
+│ ├── uart_rx.vhd -- UART receiver with input synchronization
+│ └── uart_top.vhd -- Top-level integration with optional loopback
 │
 ├── tb/
-│   ├── tb_uart_tx.vhd   -- Self-checking TX testbench
-│   ├── tb_uart_rx.vhd   -- RX testbench (good frame & frame error cases)
-│   └── tb_uart_top.vhd  -- End-to-end loopback verification
+│ ├── tb_uart_tx.vhd -- Self-checking TX testbench
+│ ├── tb_uart_rx.vhd -- RX testbench (good frame & frame error cases)
+│ └── tb_uart_top.vhd -- End-to-end loopback verification
 │
 ├── docs/
-│   └── *.png            -- Simulation waveform screenshots
+│ └── *.png -- Simulation waveform screenshots
 │
 ├── README.md
 └── .gitignore
@@ -87,8 +86,6 @@ Simulation waveforms are provided in the `docs/` directory.
 ![UART Frame Format](docs/uart_frame.png)
 ----------------------------------------------------------------------------------------------
 
- ## 🇹🇷 Türkçe
- 
  # FPGA Tabanlı UART Tasarımı (VHDL)
 
 Bu repo, VHDL kullanılarak geliştirilmiş tam sentezlenebilir bir
@@ -103,17 +100,17 @@ RTL seviyesinde test edilmiştir.
 
 FPGA-Based-UART-Design/
 ├── rtl/
-│   ├── uart_tx.vhd      -- FSM tabanlı UART verici
-│   ├── uart_rx.vhd      -- Giriş senkronizasyonlu UART alıcı
-│   └── uart_top.vhd     -- Opsiyonel loopback içeren üst seviye modül
+│ ├── uart_tx.vhd -- UART transmitter (FSM-based)
+│ ├── uart_rx.vhd -- UART receiver with input synchronization
+│ └── uart_top.vhd -- Top-level integration with optional loopback
 │
 ├── tb/
-│   ├── tb_uart_tx.vhd   -- TX için self-checking testbench
-│   ├── tb_uart_rx.vhd   -- RX doğrulama ve frame error testleri
-│   └── tb_uart_top.vhd  -- Uçtan uca loopback doğrulaması
+│ ├── tb_uart_tx.vhd -- Self-checking TX testbench
+│ ├── tb_uart_rx.vhd -- RX testbench (good frame & frame error cases)
+│ └── tb_uart_top.vhd -- End-to-end loopback verification
 │
 ├── docs/
-│   └── *.png            -- Simülasyon dalga formları
+│ └── *.png -- Simulation waveform screenshots
 │
 ├── README.md
 └── .gitignore
