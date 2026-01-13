@@ -13,7 +13,7 @@ This waveform shows successful TX → RX internal loopback
 verification at RTL level.
 
 ## Project Structure
-
+```
 FPGA-Based-UART-Design/
 ├── rtl/
 │ ├── uart_tx.vhd -- UART transmitter (FSM-based)
@@ -30,7 +30,7 @@ FPGA-Based-UART-Design/
 │
 ├── README.md
 └── .gitignore
-
+```
 ## Design Overview
 
 - Standard UART frame format (8 data bits, no parity, 1 stop bit)
@@ -97,7 +97,7 @@ Proje, kendi kendini doğrulayan (self-checking) testbench’ler ile
 RTL seviyesinde test edilmiştir.
 
 ## Proje Yapısı
-
+```
 FPGA-Based-UART-Design/
 ├── rtl/
 │ ├── uart_tx.vhd -- UART transmitter (FSM-based)
@@ -114,7 +114,7 @@ FPGA-Based-UART-Design/
 │
 ├── README.md
 └── .gitignore
-
+```
 ## Tasarım Özeti
 
 - Standart UART çerçevesi (8 veri biti, parity yok, 1 stop biti)
